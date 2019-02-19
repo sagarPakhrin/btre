@@ -16,6 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR,"/pages/templates/pages")
 LISTINGS_TEMPLATE_DIR = os.path.join(BASE_DIR,"/listings/templates/listings")
+ACCOUNTS_TEMPLATE_DIR = os.path.join(BASE_DIR,"/listings/templates/listings")
 MEDIA_ROOT_DIR = os.path.join(BASE_DIR,'media')
 
 # Quick-start development settings - unsuitable for production
@@ -35,6 +36,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'listings.apps.ListingsConfig',
+    'accounts.apps.AccountsConfig',
     'realtors.apps.RealtorsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -59,7 +61,7 @@ ROOT_URLCONF = 'btre.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR, LISTINGS_TEMPLATE_DIR],
+        'DIRS': [TEMPLATE_DIR, LISTINGS_TEMPLATE_DIR,ACCOUNTS_TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
