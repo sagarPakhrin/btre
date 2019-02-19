@@ -1,10 +1,12 @@
 {%extends 'admin/base.html'%}
 {%load static%}
 
-
 {%block branding%}
 <h1 class="head">
-		<img src="{%static 'img/logo.png'%}" alt="BT RealEstate" class="brand_img" height="50"
-		width="80"/>Admin Area
+		<img src="{%static 'img/logo.png'%}" alt="BT RealEstate" class="brand_img" height="50" width="80"/>Admin Area
 </h1>
 {%endblock%}
+
+{% block extrastyle %}
+<link rel="stylesheet" href="{%static 'css/admin.css'%}" type="text/css" media="screen" title="no title" charset="utf-8">
+{% endblock extrastyle %}
