@@ -15,13 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls.static import static
-from django.conf import settings
-
+from . import views
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('pages.urls')),
-    path('listings/', include('listings.urls')),
+    path('', views.index, name = 'listings'),
+    path('<int:listing_id>/', views.listing, name = 'listing'),
+    path('search/', views.search, name = 'search'),
 ]
-if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
